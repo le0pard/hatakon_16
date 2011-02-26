@@ -23,8 +23,8 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 
 public class JsonAgregator {
-	public static String get_url = "";
-	public static String set_url = "";
+	public static String get_url = "http://94.27.127.150/";
+	public static String set_url = "http://94.27.127.150/?type=add&";
 	
 	public static void setMarkers(Context context, MapView map){
 		List<Overlay> mapOverlays = map.getOverlays();
@@ -54,7 +54,8 @@ public class JsonAgregator {
 	
 	public static void setData(long lat, long lng, int amplitude){
 		HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(JsonAgregator.set_url + "?lng=" + Long.toString(lng) + "&lat=" + Long.toString(lat) + "&value=" + Integer.toString(amplitude));
+		String query = "{\"points\":[{\"lng\": " + Long.toString(lng) + ", \"lat\": " + Long.toString(lat) + ", \"value\": \"" + Integer.toString(amplitude) + "\"";
+        HttpGet httpget = new HttpGet(JsonAgregator.set_url + query);
         try {
         	httpclient.execute(httpget);
         } catch (Exception e) { 
