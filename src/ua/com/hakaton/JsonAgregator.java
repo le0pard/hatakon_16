@@ -37,7 +37,7 @@ public class JsonAgregator {
 			    JSONObject row = points_array.getJSONObject(i);
 			    long lat = row.getLong("lat");
 			    long lng = row.getLong("lng");
-			    String amplitude = row.getString("aplitude");
+			    String amplitude = row.getString("value");
 			    GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
 			    RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), amplitude);
 			    roadItemizedOverlay.addOverlay(overlayitem);
@@ -54,7 +54,7 @@ public class JsonAgregator {
 	
 	public static void setData(long lat, long lng, int amplitude){
 		HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(JsonAgregator.set_url + "?lng=" + Long.toString(lng) + "&lat=" + Long.toString(lat) + "&amplitude=" + Integer.toString(amplitude));
+        HttpGet httpget = new HttpGet(JsonAgregator.set_url + "?lng=" + Long.toString(lng) + "&lat=" + Long.toString(lat) + "&value=" + Integer.toString(amplitude));
         try {
         	httpclient.execute(httpget);
         } catch (Exception e) { 
