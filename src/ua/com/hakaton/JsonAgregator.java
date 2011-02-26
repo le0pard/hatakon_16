@@ -24,6 +24,7 @@ import com.google.android.maps.Overlay;
 
 public class JsonAgregator {
 	public static String get_url = "";
+	public static String set_url = "";
 	
 	public static void setMarkers(Context context, MapView map){
 		List<Overlay> mapOverlays = map.getOverlays();
@@ -51,8 +52,15 @@ public class JsonAgregator {
 		mapOverlays.add(roadItemizedOverlay);
 	}
 	
-	public static void setData(int amplitude){
-		
+	public static void setData(long lat, long lng, int amplitude){
+		HttpClient httpclient = new DefaultHttpClient();
+        HttpGet httpget = new HttpGet(JsonAgregator.set_url + "?lng=" + Long.toString(lng) + "&lat=" + Long.toString(lat) + "&amplitude=" + Integer.toString(amplitude));
+        try {
+        	httpclient.execute(httpget);
+        } catch (Exception e) { 
+        	//e.printStackTrace();
+        	//Log.v("JsonClient","Exception");
+        }
 	}
 	
 	public static JSONObject getData(String url){
