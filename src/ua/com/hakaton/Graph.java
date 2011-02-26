@@ -3,6 +3,7 @@ package ua.com.hakaton;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,10 +13,11 @@ import android.graphics.drawable.Drawable;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
@@ -216,7 +218,6 @@ public class Graph extends MapActivity {
 
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
         
-        
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mGraphView = new GraphView(this);
         container.addView(mGraphView, 0);
@@ -252,4 +253,24 @@ public class Graph extends MapActivity {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menuAbout:
+			Intent settingsActivity = new Intent(getBaseContext(),
+					AboutActivity.class);
+			startActivity(settingsActivity);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}	
 }
