@@ -35,7 +35,9 @@ public class JsonAgregator {
 		double lat = 0;
 		double lng = 0;
 		
-		RoadItemizedOverlay roadItemizedOverlay = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.icon), context);
+		RoadItemizedOverlay roadItemizedOverlayGreen = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_green), context);
+		RoadItemizedOverlay roadItemizedOverlayYelow = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_yelow), context);
+		RoadItemizedOverlay roadItemizedOverlayRed = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_red), context);
 		try{
 			JSONObject data = JsonAgregator.getData(JsonAgregator.get_url);
 			JSONArray points_array = data.getJSONArray("points");
@@ -44,10 +46,19 @@ public class JsonAgregator {
 			    JSONObject row = points_array.getJSONObject(i);
 			    lat = row.getDouble("lat");
 			    lng = row.getDouble("lng");
-			    String amplitude = row.getString("value");
+			    int amplitude = row.getInt("value");
 			    GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
-			    RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), amplitude);
-			    roadItemizedOverlay.addOverlay(overlayitem);
+			    if (amplitude < 15){
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_low));
+			    	roadItemizedOverlayGreen.addOverlay(overlayitem);
+			    } else if (amplitude < 35){
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_medium));
+			    	roadItemizedOverlayYelow.addOverlay(overlayitem);
+			    } else {
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_high));
+			    	roadItemizedOverlayRed.addOverlay(overlayitem);
+			    }
+			    
 			}
 		} catch (JSONException e) {
 			//Log.i("dataCollector", "error data");
@@ -60,7 +71,9 @@ public class JsonAgregator {
 		GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
     	mapController.animateTo(point);
     	mapController.setZoom(12);
-		mapOverlays.add(roadItemizedOverlay);
+		mapOverlays.add(roadItemizedOverlayGreen);
+		mapOverlays.add(roadItemizedOverlayYelow);
+		mapOverlays.add(roadItemizedOverlayRed);
 	}
 	
 	public static void setData(double lat, double lng, int amplitude){

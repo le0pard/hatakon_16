@@ -2,5 +2,9 @@
 <resources>
     <string name="hello">Hello World, Team16!</string>
     <string name="app_name">Team16</string>
-<string name="ammplitude_title">Степень неровности</string>
+    <string name="ammplitude_title">Степень неровности</string>
+    <string name="ammplitude_desc">Уровень угрозы: </string>
+    <string name="ammplitude_low">Низкий</string>
+    <string name="ammplitude_medium">Средний</string>
+    <string name="ammplitude_high">Высокий</string>
 </resources>
