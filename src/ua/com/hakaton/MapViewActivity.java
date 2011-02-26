@@ -15,7 +15,6 @@ public class MapViewActivity extends MapActivity {
 	protected Drawable drawable;
 	protected RoadItemizedOverlay itemizedOverlay;	
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -24,10 +23,7 @@ public class MapViewActivity extends MapActivity {
         setContentView(R.layout.map);
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
-
-        
-        JsonAgregator jsonAgregator = new JsonAgregator();
-        jsonAgregator.setMarkers(this, mapView);
+        JsonAgregator.setMarkers(this, mapView);
 	}
 
 
