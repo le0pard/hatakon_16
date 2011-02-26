@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Team16!</string>
+    <string name="app_name">Team16</string>
+    <string name="ammplitude_title">Рівень</string>
+    <string name="ammplitude_desc">Рівень небезпеки: </string>
+    <string name="ammplitude_low">Низкий</string>
+    <string name="ammplitude_medium">Средній</string>
+    <string name="ammplitude_high">Високий</string>
+</resources>

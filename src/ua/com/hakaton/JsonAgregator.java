@@ -48,12 +48,14 @@ public class JsonAgregator {
 			    lng = row.getDouble("lng");
 			    int amplitude = row.getInt("value");
 			    GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
-			    RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + Integer.toString(amplitude));
 			    if (amplitude < 15){
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_low));
 			    	roadItemizedOverlayGreen.addOverlay(overlayitem);
 			    } else if (amplitude < 35){
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_medium));
 			    	roadItemizedOverlayYelow.addOverlay(overlayitem);
 			    } else {
+			    	RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + context.getResources().getString(R.string.ammplitude_high));
 			    	roadItemizedOverlayRed.addOverlay(overlayitem);
 			    }
 			    
