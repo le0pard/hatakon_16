@@ -21,9 +21,6 @@ public class MapViewActivity extends MapActivity {
 		super.onCreate(savedInstanceState);
 		
         setContentView(R.layout.map);
-        mapView = (MapView) findViewById(R.id.mapview);
-        mapView.setBuiltInZoomControls(true);
-        JsonAgregator.setMarkers(this, mapView);
 	}
 
 
