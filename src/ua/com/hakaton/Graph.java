@@ -1,23 +1,34 @@
 package ua.com.hakaton;
 
-import android.app.Activity;
+import java.util.List;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-import java.lang.Math;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
 
 
-public class Graph extends Activity {
+public class Graph extends MapActivity {
+	protected MapView mapView;
+	protected List<Overlay> mapOverlays;
+	protected Drawable drawable;
+	protected RoadItemizedOverlay itemizedOverlay;	
+	
+	
+	
     /** Tag string for our debug logs */
     private static final String TAG = "Sensors";
 
@@ -200,11 +211,23 @@ public class Graph extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         // Be sure to call the super class.
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.map);
 
+        LinearLayout container = (LinearLayout) findViewById(R.id.container);
+        
+        
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mGraphView = new GraphView(this);
-        setContentView(mGraphView);
+        container.addView(mGraphView, 0);
+        mGraphView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 50));
+        
+        mapView = (MapView) findViewById(R.id.mapview);
+        mapView.setBuiltInZoomControls(true);
+        mapView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+    
         LocationFinder loc = new LocationFinder(this);
+        JsonAgregator.setMarkers(this, mapView);
+        
     }
 
     @Override
@@ -222,4 +245,10 @@ public class Graph extends Activity {
         mSensorManager.unregisterListener(mGraphView);
         super.onStop();
     }
+
+	@Override
+	protected boolean isRouteDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
