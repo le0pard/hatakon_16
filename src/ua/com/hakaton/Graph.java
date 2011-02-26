@@ -36,7 +36,7 @@ public class Graph extends MapActivity {
     private SensorManager mSensorManager;
     private GraphView mGraphView;
     
-    private static float AmplitudeMax = 100;
+    private static float AmplitudeMax = 15;
     private static float AmplitudeMidle = AmplitudeMax/2;
 
     private class GraphView extends View implements SensorListener
@@ -47,6 +47,7 @@ public class Graph extends MapActivity {
         private Path    mPath = new Path();
 
         private float   mLastValues[] = new float[3*2];
+        private float   mSensorValues[] = new float[3*2];
         private float   mOrientationValues[] = new float[3];
         private int     mColors[] = new int[3*2];
         private float   mLastX;
@@ -157,20 +158,23 @@ public class Graph extends MapActivity {
                         for (int i=0 ; i<3 ; i++) {
                             int k = i+j*3;
                             final float v = mYOffset + values[i] * mScale[j];
+                            final float newSensorValue = values[i];
                             paint.setColor(mColors[k]);
                             canvas.drawLine(mLastX, mLastValues[k], newX, v, paint);
                             
                             
-                            int Diff = (int)Math.abs(mLastValues[k] - v);
+                            int Diff = (int)Math.abs(mSensorValues[k] - newSensorValue);
+                            //Log.i("Team16", "Graph(): detected yama | old=" +mSensorValues[k]+" New="+newSensorValue+" Amplitude="+(mLastValues[k] - v));
 
                             if ( Diff > AmplitudeMax  ){
                             	//TODO: GEt GEO Location
                             	JsonAgregator.setData(LocationFinder.lat, LocationFinder.lng, Diff);
-                            	//Log.i("Team16", "Graph(): detected yama | old=" +mLastValues[k]+" New="+v+" Amplitude="+(mLastValues[k] - v));
-                            	//drawText("X",newX,v);
+                            	//Log.i("Team16", "Graph(): detected yama | old=" +mSensorValues[k]+" New="+newSensorValue+" Amplitude="+Diff);
+                            	drawText("*",newX,v);
                             }
 
                             mLastValues[k] = v;
+                            mSensorValues[k] = newSensorValue;
                         }
                         if (sensor == SensorManager.SENSOR_MAGNETIC_FIELD)
                             mLastX += mSpeed;
