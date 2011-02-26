@@ -27,8 +27,7 @@ public class Team16 extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				// TODO: Modifi it
-				//startActivity(new Intent(Team16.this, Graph.class));
+				startActivity(new Intent(Team16.this, MapViewActivity.class));
 			}
         });
     }
