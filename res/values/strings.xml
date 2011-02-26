@@ -2,5 +2,5 @@
 <resources>
     <string name="hello">Hello World, Team16!</string>
     <string name="app_name">Team16</string>
-<string name="ammplitude_title">Амплитуда</string>
+<string name="ammplitude_title">Степень неровности</string>
 </resources>

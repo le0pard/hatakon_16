@@ -17,17 +17,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 
 public class JsonAgregator {
-	public static String get_url = "http://94.27.127.150/";
-	public static String set_url = "http://94.27.127.150/?type=add&";
+	public static String get_url = "http://ustav.dp.ua/?type=get";
+	public static String set_url = "http://ustav.dp.ua/?type=add&";
 	
 	public static void setMarkers(Context context, MapView map){
+		MapController mapController = map.getController();
 		List<Overlay> mapOverlays = map.getOverlays();
+		
+		double lat = 0;
+		double lng = 0;
+		
 		RoadItemizedOverlay roadItemizedOverlay = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.icon), context);
 		try{
 			JSONObject data = JsonAgregator.getData(JsonAgregator.get_url);
@@ -35,8 +42,8 @@ public class JsonAgregator {
 			int count = points_array.length();
 			for (int i = 0; i < count; ++i) {
 			    JSONObject row = points_array.getJSONObject(i);
-			    long lat = row.getLong("lat");
-			    long lng = row.getLong("lng");
+			    lat = row.getDouble("lat");
+			    lng = row.getDouble("lng");
 			    String amplitude = row.getString("value");
 			    GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
 			    RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), amplitude);
@@ -49,12 +56,16 @@ public class JsonAgregator {
 	    	//e.printStackTrace();
 	    	//Log.v("dataCollector","Exception");
 	    }
+		
+		GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
+    	mapController.animateTo(point);
+    	mapController.setZoom(12);
 		mapOverlays.add(roadItemizedOverlay);
 	}
 	
-	public static void setData(long lat, long lng, int amplitude){
+	public static void setData(double lat, double lng, int amplitude){
 		HttpClient httpclient = new DefaultHttpClient();
-		String query = "{\"points\":[{\"lng\": " + Long.toString(lng) + ", \"lat\": " + Long.toString(lat) + ", \"value\": \"" + Integer.toString(amplitude) + "\"";
+		String query = "lng=" + Double.toString(lng) + "&lat=" + Double.toString(lat) + "&value=" + Integer.toString(amplitude);
         HttpGet httpget = new HttpGet(JsonAgregator.set_url + query);
         try {
         	httpclient.execute(httpget);

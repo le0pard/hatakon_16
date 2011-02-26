@@ -153,7 +153,7 @@ public class Graph extends Activity {
                             
                             if ( Diff > AmplitudeMax  ){
                             	//TODO: GEt GEO Location
-                            	JsonAgregator.setData(50, 30, Diff);
+                            	JsonAgregator.setData(LocationFinder.lat, LocationFinder.lng, Diff);
                             	//Log.i("Team16", "Graph(): detected yama | old=" +mLastValues[k]+" New="+v+" Amplitude="+(mLastValues[k] - v));
                             	//drawText("X",newX,v);
                             }
@@ -204,6 +204,7 @@ public class Graph extends Activity {
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mGraphView = new GraphView(this);
         setContentView(mGraphView);
+        LocationFinder loc = new LocationFinder(this);
     }
 
     @Override
