@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -161,7 +162,7 @@ public class Graph extends MapActivity {
                             
                             
                             int Diff = (int)Math.abs(mLastValues[k] - v);
-                            
+
                             if ( Diff > AmplitudeMax  ){
                             	//TODO: GEt GEO Location
                             	JsonAgregator.setData(LocationFinder.lat, LocationFinder.lng, Diff);
@@ -219,7 +220,7 @@ public class Graph extends MapActivity {
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mGraphView = new GraphView(this);
         container.addView(mGraphView, 0);
-        mGraphView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 50));
+        mGraphView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 100));
         
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
