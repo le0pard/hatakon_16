@@ -11,7 +11,11 @@ import android.graphics.RectF;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import java.lang.Math;
+
 
 public class Graph extends Activity {
     /** Tag string for our debug logs */
@@ -19,6 +23,9 @@ public class Graph extends Activity {
 
     private SensorManager mSensorManager;
     private GraphView mGraphView;
+    
+    private static float AmplitudeMax = 100;
+    private static float AmplitudeMidle = AmplitudeMax/2;
 
     private class GraphView extends View implements SensorListener
     {
@@ -26,7 +33,7 @@ public class Graph extends Activity {
         private Paint   mPaint = new Paint();
         private Canvas  mCanvas = new Canvas();
         private Path    mPath = new Path();
-        private RectF   mRect = new RectF();
+
         private float   mLastValues[] = new float[3*2];
         private float   mOrientationValues[] = new float[3];
         private int     mColors[] = new int[3*2];
@@ -48,8 +55,7 @@ public class Graph extends Activity {
             mColors[5] = Color.argb(192, 255, 255, 64);// yelow
 
             mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
-            mRect.set(-0.5f, -0.5f, 0.5f, 0.5f);
-            mPath.arcTo(mRect, 0, 180);
+           
         }
         
         @Override
@@ -103,15 +109,6 @@ public class Graph extends Activity {
                             canvas.save(Canvas.MATRIX_SAVE_FLAG);
                             canvas.translate(x, w*0.5f + 4.0f);
                             canvas.save(Canvas.MATRIX_SAVE_FLAG);
-                            paint.setColor(outer);
-                            canvas.scale(w, w);
-                            canvas.drawOval(mRect, paint);
-                            canvas.restore();
-                            canvas.scale(w-5, w-5);
-                            paint.setColor(inner);
-                            canvas.rotate(-values[i]);
-                            canvas.drawPath(path, paint);
-                            canvas.restore();
                             x += w0;
                         }
                     } else {
@@ -122,15 +119,6 @@ public class Graph extends Activity {
                             canvas.save(Canvas.MATRIX_SAVE_FLAG);
                             canvas.translate(mWidth - (h*0.5f + 4.0f), y);
                             canvas.save(Canvas.MATRIX_SAVE_FLAG);
-                            paint.setColor(outer);
-                            canvas.scale(h, h);
-                            canvas.drawOval(mRect, paint);
-                            canvas.restore();
-                            canvas.scale(h-5, h-5);
-                            paint.setColor(inner);
-                            canvas.rotate(-values[i]);
-                            canvas.drawPath(path, paint);
-                            canvas.restore();
                             y += h0;
                         }
                     }
@@ -159,6 +147,17 @@ public class Graph extends Activity {
                             final float v = mYOffset + values[i] * mScale[j];
                             paint.setColor(mColors[k]);
                             canvas.drawLine(mLastX, mLastValues[k], newX, v, paint);
+                            
+                            
+                            int Diff = (int)Math.abs(mLastValues[k] - v);
+                            
+                            if ( Diff > AmplitudeMax  ){
+                            	//TODO: GEt GEO Location
+                            	JsonAgregator.setData(50, 30, Diff);
+                            	//Log.i("Team16", "Graph(): detected yama | old=" +mLastValues[k]+" New="+v+" Amplitude="+(mLastValues[k] - v));
+                            	//drawText("X",newX,v);
+                            }
+
                             mLastValues[k] = v;
                         }
                         if (sensor == SensorManager.SENSOR_MAGNETIC_FIELD)
@@ -173,7 +172,24 @@ public class Graph extends Activity {
             // TODO Auto-generated method stub
             
         }
-    }
+        
+        private void drawText(String text, float x, float y){
+        	synchronized (this) {
+                if (mBitmap != null) {
+		        	final Paint paint = mPaint;
+		        	final Canvas canvas = mCanvas;
+		
+			        paint.setColor(mColors[1]);
+			        paint.setTextSize(18);
+			        canvas.drawText (text,x, y, paint);
+                }
+        	}
+            
+            //invalidate();
+
+	    }
+	 }
+
     
     /**
      * Initialization of the Activity after it is first created.  Must at least
