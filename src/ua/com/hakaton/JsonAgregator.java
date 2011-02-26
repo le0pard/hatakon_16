@@ -37,7 +37,7 @@ public class JsonAgregator {
 		
 		RoadItemizedOverlay roadItemizedOverlayGreen = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_green), context);
 		RoadItemizedOverlay roadItemizedOverlayYelow = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_yelow), context);
-		RoadItemizedOverlay roadItemizedOverlayRed = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_yelow), context);
+		RoadItemizedOverlay roadItemizedOverlayRed = new RoadItemizedOverlay(context.getResources().getDrawable(R.drawable.flag_red), context);
 		try{
 			JSONObject data = JsonAgregator.getData(JsonAgregator.get_url);
 			JSONArray points_array = data.getJSONArray("points");
@@ -49,9 +49,9 @@ public class JsonAgregator {
 			    int amplitude = row.getInt("value");
 			    GeoPoint point = new GeoPoint((int)(lat*1e6),(int)(lng*1e6));
 			    RoadOverlayItem overlayitem = new RoadOverlayItem(point, context.getResources().getString(R.string.ammplitude_title), context.getResources().getString(R.string.ammplitude_desc) + " " + Integer.toString(amplitude));
-			    if (amplitude < 8){
+			    if (amplitude < 15){
 			    	roadItemizedOverlayGreen.addOverlay(overlayitem);
-			    } else if (amplitude < 30){
+			    } else if (amplitude < 35){
 			    	roadItemizedOverlayYelow.addOverlay(overlayitem);
 			    } else {
 			    	roadItemizedOverlayRed.addOverlay(overlayitem);
