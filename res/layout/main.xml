@@ -4,9 +4,20 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+
+	<Button android:layout_height="wrap_content" 
+		android:id="@+id/btnStart" 
+		android:layout_width="fill_parent" 
+		android:layout_weight="1" 
+		android:text="Start road test" 
+		android:textSize="26sp">
+	</Button>
+	
+	<Button android:layout_height="wrap_content" 
+		android:id="@+id/btnMap" 
+		android:layout_width="fill_parent" 
+		android:layout_weight="1" 
+		android:text="View test on Map" 
+		android:textSize="26sp">
+	</Button>
 </LinearLayout>
