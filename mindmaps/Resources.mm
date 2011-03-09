@@ -3,42 +3,54 @@
 <node TEXT="Resources" ID="ID_860738583" CREATED="1294235447827" MODIFIED="1299353361638" COLOR="#666600" BACKGROUND_COLOR="#ff99ff">
 <font SIZE="16" BOLD="true"/>
 <hook NAME="MapStyle" max_node_width="600"/>
-<node TEXT="WWW" POSITION="right" ID="ID_460857967" CREATED="1298719072564" MODIFIED="1299353046354">
-<node TEXT="UML" ID="ID_1816837734" CREATED="1299353376560" MODIFIED="1299353378715"/>
+<node TEXT="PA3HOE" POSITION="right" ID="ID_1560455094" CREATED="1299352848420" MODIFIED="1299678146488" BACKGROUND_COLOR="#cccccc">
+<node TEXT="alexey.ustenko@gmail.com, artem.limp@gmail.com, b.pratsiuk@gmail.com, ivan.grinichenko.@gmail.com, leopard_ne@inbox.ru" ID="ID_1990761718" CREATED="1299677472899" MODIFIED="1299678146506" BACKGROUND_COLOR="#cccccc"/>
 </node>
-<node TEXT="Git" POSITION="left" ID="ID_857406458" CREATED="1299352800041" MODIFIED="1299352986998">
-<node TEXT="https://github.com/le0pard/hatakon_16.git" ID="ID_8081931" CREATED="1299415623461" MODIFIED="1299415623475" LINK="https://github.com/le0pard/hatakon_16.git"/>
+<node TEXT="WWW" POSITION="right" ID="ID_460857967" CREATED="1298719072564" MODIFIED="1299678146487" BACKGROUND_COLOR="#cccccc">
+<node TEXT="UML" ID="ID_1816837734" CREATED="1299353376560" MODIFIED="1299678146506" BACKGROUND_COLOR="#cccccc">
+<node TEXT="http://www.visual-paradigm.com/download/vpuml.jsp?edition=ce" ID="ID_518361676" CREATED="1299677986962" MODIFIED="1299678146489" LINK="http://www.visual-paradigm.com/download/vpuml.jsp?edition=ce" BACKGROUND_COLOR="#cccccc"/>
 </node>
-<node TEXT="private data" POSITION="left" ID="ID_1854575071" CREATED="1299352825455" MODIFIED="1299353002758">
+</node>
+<node TEXT="private data" POSITION="left" ID="ID_1854575071" CREATED="1299352825455" MODIFIED="1299678267983" BACKGROUND_COLOR="#ff0000">
 <node TEXT="&#x410;&#x43b;&#x435;&#x43a;&#x441;&#x435;&#x439; &#x423;&#x441;&#x442;&#x435;&#x43d;&#x43a;&#x43e; (Alexey Ustenko)" ID="ID_581324749" CREATED="1299671866894" MODIFIED="1299672045491" BACKGROUND_COLOR="#ff99ff">
 <node TEXT="nick: ustav" ID="ID_60202532" CREATED="1299671939037" MODIFIED="1299672045490" BACKGROUND_COLOR="#ff99ff"/>
-<node TEXT="mailto: alexey.ustenko@gmail.com" ID="ID_402911452" CREATED="1299671887249" MODIFIED="1299672045488" BACKGROUND_COLOR="#ff99ff"/>
+<node TEXT="alexey.ustenko@gmail.com" ID="ID_954007358" CREATED="1299677328005" MODIFIED="1299677428967" LINK="mailto:alexey.ustenko@gmail.com" BACKGROUND_COLOR="#ff99ff">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
 </node>
 <node TEXT="&#x410;&#x440;&#x442;&#x435;&#x43c; &#x412;&#x438;&#x442;&#x44e;&#x43a; (Artem Vityuk)" ID="ID_380388149" CREATED="1299672874944" MODIFIED="1299675512905" BACKGROUND_COLOR="#ffff00">
 <node TEXT="nick: limp" ID="ID_414795418" CREATED="1299672895814" MODIFIED="1299675512904" BACKGROUND_COLOR="#ffff00"/>
-<node TEXT="mailto: artem.limp@gmail.com" ID="ID_1281227426" CREATED="1299672909541" MODIFIED="1299675512902" BACKGROUND_COLOR="#ffff00"/>
+<node TEXT="artem.limp@gmail.com" ID="ID_1043303110" CREATED="1299677352562" MODIFIED="1299677440653" LINK="mailto:artem.limp@gmail.com" BACKGROUND_COLOR="#ffff00">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
 </node>
 <node TEXT="&#x411;&#x43e;&#x440;&#x438;&#x441; &#x41f;&#x440;&#x430;&#x446;&#x44e;&#x43a; (Borys Pratsiuk)" ID="ID_968827324" CREATED="1299353092655" MODIFIED="1299673031317" BACKGROUND_COLOR="#ccccff">
 <node TEXT="nick: Bosicc" ID="ID_1679898210" CREATED="1299353190330" MODIFIED="1299673031313" BACKGROUND_COLOR="#ccccff"/>
+<node TEXT="b.pratsiuk@gmail.com" ID="ID_62068725" CREATED="1299677375719" MODIFIED="1299677443134" LINK="mailto:b.pratsiuk@gmail.com" BACKGROUND_COLOR="#ccccff">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
 <node TEXT="skype:" ID="ID_1297241248" CREATED="1299353138459" MODIFIED="1299673031311" BACKGROUND_COLOR="#ccccff"/>
-<node TEXT="mailto: b.pratsiuk@gmail.com" ID="ID_557352038" CREATED="1299353146129" MODIFIED="1299673031310" BACKGROUND_COLOR="#ccccff"/>
 <node TEXT="phone:" ID="ID_936142222" CREATED="1299353175690" MODIFIED="1299673031308" BACKGROUND_COLOR="#ccccff"/>
 </node>
 <node TEXT="&#x418;&#x432;&#x430;&#x43d; &#x413;&#x440;&#x438;&#x43d;&#x438;&#x447;&#x435;&#x43d;&#x43a;&#x43e; (Ivan Grinichenko)" ID="ID_1282516123" CREATED="1299353442359" MODIFIED="1299673044142" BACKGROUND_COLOR="#99ff99">
 <node TEXT="nick: g-r-i-n" ID="ID_478388198" CREATED="1299353458596" MODIFIED="1299673044141" BACKGROUND_COLOR="#99ff99"/>
+<node TEXT="g-r-i-n@yandex.ru" ID="ID_638087725" CREATED="1299677390888" MODIFIED="1299677445820" LINK="mailto:g-r-i-n@yandex.ru" BACKGROUND_COLOR="#99ff99">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="ivan.grinichenko@gmail.com" ID="ID_1967736107" CREATED="1299677399314" MODIFIED="1299677446563" LINK="mailto:ivan.grinichenko@gmail.com" BACKGROUND_COLOR="#99ff99">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
 <node TEXT="skype: g-r-i-n" ID="ID_999870634" CREATED="1299353464624" MODIFIED="1299673044140" BACKGROUND_COLOR="#99ff99"/>
-<node TEXT="mailto: g-r-i-n@yandex.ru, ivan.grinichenko@gmail.com" ID="ID_304222429" CREATED="1299353470511" MODIFIED="1299673044140" BACKGROUND_COLOR="#99ff99"/>
 <node TEXT="phone: 0630759682" ID="ID_480858147" CREATED="1299353491982" MODIFIED="1299673044139" BACKGROUND_COLOR="#99ff99"/>
 <node TEXT="ICQ: 200962795" ID="ID_953207087" CREATED="1299353525080" MODIFIED="1299673044138" BACKGROUND_COLOR="#99ff99"/>
 <node TEXT="MoiKrug:" ID="ID_208254354" CREATED="1299353542003" MODIFIED="1299673044136" BACKGROUND_COLOR="#99ff99"/>
 </node>
 </node>
-<node TEXT="PA3HOE" POSITION="left" ID="ID_1560455094" CREATED="1299352848420" MODIFIED="1299352880991"/>
-<node TEXT="Google" POSITION="right" ID="ID_1052449687" CREATED="1299671427116" MODIFIED="1299671433258">
-<node TEXT="https://www.google.com/accounts/ServiceLogin?service=wise&amp;passive=1209600&amp;continue=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;followup=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;hl=ru" ID="ID_583949701" CREATED="1299671434784" MODIFIED="1299671434786" LINK="https://www.google.com/accounts/ServiceLogin?service=wise&amp;passive=1209600&amp;continue=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;followup=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;hl=ru"/>
+<node TEXT="Google" POSITION="right" ID="ID_1052449687" CREATED="1299671427116" MODIFIED="1299678146486" BACKGROUND_COLOR="#cccccc">
+<node TEXT="https://www.google.com/accounts/ServiceLogin?service=wise&amp;passive=1209600&amp;continue=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;followup=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;hl=ru" ID="ID_583949701" CREATED="1299671434784" MODIFIED="1299678146494" LINK="https://www.google.com/accounts/ServiceLogin?service=wise&amp;passive=1209600&amp;continue=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;followup=https://spreadsheets.google.com/ccc?key%3D0AnwHRUtpNylmdEpxNVhOZ29SR1FRWWRScGE1Y1NTdnc%26hl%3Dru&amp;hl=ru" BACKGROUND_COLOR="#cccccc"/>
 </node>
-<node TEXT="MindMap&apos;s" POSITION="right" ID="ID_1253103303" CREATED="1299674215747" MODIFIED="1299674220364">
-<node TEXT="FreePlane" ID="ID_1814320390" CREATED="1299674221553" MODIFIED="1299675421036">
+<node TEXT="MindMap&apos;s" POSITION="right" ID="ID_1253103303" CREATED="1299674215747" MODIFIED="1299678146486" BACKGROUND_COLOR="#cccccc">
+<node TEXT="FreePlane" ID="ID_1814320390" CREATED="1299674221553" MODIFIED="1299678146492" BACKGROUND_COLOR="#cccccc">
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -135,7 +147,11 @@
   </body>
 </html>
 </richcontent>
+<node TEXT="http://freeplane.sourceforge.net/wiki/index.php/Main_Page" ID="ID_431032431" CREATED="1299677523036" MODIFIED="1299678146490" LINK="http://freeplane.sourceforge.net/wiki/index.php/Main_Page" BACKGROUND_COLOR="#cccccc"/>
 </node>
+</node>
+<node TEXT="Git" POSITION="right" ID="ID_857406458" CREATED="1299352800041" MODIFIED="1299678146483" BACKGROUND_COLOR="#cccccc">
+<node TEXT="https://github.com/le0pard/hatakon_16.git" ID="ID_8081931" CREATED="1299415623461" MODIFIED="1299678146491" LINK="https://github.com/le0pard/hatakon_16.git" BACKGROUND_COLOR="#cccccc"/>
 </node>
 </node>
 </map>
