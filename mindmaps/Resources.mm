@@ -17,10 +17,28 @@
 <node TEXT="alexey.ustenko@gmail.com" ID="ID_954007358" CREATED="1299677328005" MODIFIED="1299677428967" LINK="mailto:alexey.ustenko@gmail.com" BACKGROUND_COLOR="#ff99ff">
 <font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
 </node>
+<node TEXT="skype:" ID="ID_615290045" CREATED="1299691868590" MODIFIED="1299691901649" BACKGROUND_COLOR="#ff99ff">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="phone:" ID="ID_1967639465" CREATED="1299691875060" MODIFIED="1299691902899" BACKGROUND_COLOR="#ff99ff">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
+</node>
+<node TEXT="&#x410;&#x43b;&#x435;&#x43a;&#x441;&#x435;&#x439; &#x412;&#x430;&#x441;&#x438;&#x43b;&#x44c;&#x435;&#x432; (Alexey Vasiliev)" ID="ID_144468960" CREATED="1299691649609" MODIFIED="1299692091562" BACKGROUND_COLOR="#fcb896">
+<node TEXT="nick: leopard" ID="ID_1244084373" CREATED="1299691673556" MODIFIED="1299692091561" BACKGROUND_COLOR="#fcb896"/>
+<node TEXT="leopard_ne@inbox.ru" ID="ID_978540416" CREATED="1299691855607" MODIFIED="1299692091560" LINK="mailto:leopard_ne@inbox.ru" BACKGROUND_COLOR="#fcb896"/>
+<node TEXT="skype:" ID="ID_520405565" CREATED="1299691879445" MODIFIED="1299692091559" BACKGROUND_COLOR="#fcb896"/>
+<node TEXT="phone:" ID="ID_462790961" CREATED="1299691884000" MODIFIED="1299692091557" BACKGROUND_COLOR="#fcb896"/>
 </node>
 <node TEXT="&#x410;&#x440;&#x442;&#x435;&#x43c; &#x412;&#x438;&#x442;&#x44e;&#x43a; (Artem Vityuk)" ID="ID_380388149" CREATED="1299672874944" MODIFIED="1299675512905" BACKGROUND_COLOR="#ffff00">
 <node TEXT="nick: limp" ID="ID_414795418" CREATED="1299672895814" MODIFIED="1299675512904" BACKGROUND_COLOR="#ffff00"/>
 <node TEXT="artem.limp@gmail.com" ID="ID_1043303110" CREATED="1299677352562" MODIFIED="1299677440653" LINK="mailto:artem.limp@gmail.com" BACKGROUND_COLOR="#ffff00">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="skype:" ID="ID_1812630694" CREATED="1299691891290" MODIFIED="1299691911112" BACKGROUND_COLOR="#ffff00">
+<font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="phone:" ID="ID_520534673" CREATED="1299691894256" MODIFIED="1299691912144" BACKGROUND_COLOR="#ffff00">
 <font NAME="SansSerif" SIZE="12" BOLD="false" ITALIC="false"/>
 </node>
 </node>
@@ -145,8 +163,7 @@
       
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="http://freeplane.sourceforge.net/wiki/index.php/Main_Page" ID="ID_431032431" CREATED="1299677523036" MODIFIED="1299678146490" LINK="http://freeplane.sourceforge.net/wiki/index.php/Main_Page" BACKGROUND_COLOR="#cccccc"/>
 </node>
 </node>
